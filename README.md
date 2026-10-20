@@ -1,25 +1,26 @@
 # Band Medley Studio
 
-A local-first, beginner-friendly medley arrangement planner for college bands.
+A beginner-friendly, local-first medley planning app for college bands.
 
-## Features
-- Competition brief built around instrument ability, vocal ability, musicianship, coordination, arrangement, originality, stage presence and overall performance.
-- Performer roster with names, roles, style specialities, optional comfortable range, notes and 1–5 skill ratings.
-- Song bank for source/version, language, BPM, tonic/key, raga/scale notes, desired song section, user-provided lyric cues and reference timestamps.
-- Timestamped arrangement segments with lead/response assignments, exact lyric/section cues, instrument entry/exit notes and transitions.
-- Blueprint export as TXT, project export as JSON, and timeline export as CSV.
-- Browser-local save/load.
-- Timing audit and rehearsal checklist.
+## New in this version
+- A searchable starter catalogue of songs in Malayalam, Tamil, Kannada, Hindi, Telugu and English.
+- Add catalogue songs to your editable Song Bank with one tap.
+- Describe the kind of medley you want in everyday language; the app creates a beginner-friendly starter flow with approximate timing and transition/rehearsal cues.
+- Build a copyable AI prompt using your song list, performers, instruments, competition duration and desired mood.
+- Import song titles from TXT/CSV/Markdown files, text-based PDFs, or scan a photo/screenshot with browser OCR.
+- Separate instrument inventory with common instruments and custom equipment notes.
+- Existing performer roster, timestamped arrangement, timeline audit, rehearsal checklist, TXT/JSON/CSV exports and browser-local save/load remain available.
 
-## Run it
-1. Upload `index.html` to a GitHub repository.
-2. Open it locally in a browser, or enable GitHub Pages in repository Settings → Pages to publish the static app.
-3. No build step, framework, API key, or server is required.
+## Run or publish
+1. Upload `index.html` and `README.md` to the root of a GitHub repository.
+2. To publish it, open repository **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
+3. Open the GitHub Pages URL shown on the Pages screen.
 
-## Important limits
-This is an arrangement planner, not an automatic audio-analysis engine. It does not independently identify a song's BPM, key/tonic, raga, exact lyric timestamps, or whether two melodies can safely overlap. Treat those fields as unverified until checked against an authorised recording, notation, or a qualified musician. Add the song-specific lyric cues and exact timestamps yourself; the app uses those to create a detailed rehearsal blueprint.
+The main planner works as a static page. Image OCR and PDF reading load browser libraries from a CDN and therefore require internet access. If the app is opened directly from a phone's file manager, some browser features may be restricted; GitHub Pages is the recommended way to use it.
 
-For copyrighted songs, this app does not ship with complete lyrics. Enter your own short rehearsal cues or section labels (for example, “Pallavi, first line through final repeat”) and refer to authorised lyric sources and recordings. Confirm any performance/licensing requirements with the event organiser.
+## AI and music accuracy
+The built-in planner is a structured starter assistant, not a live AI model and not an audio-analysis engine. The song catalogue is a curated starter list, not a real-time trending chart. The copyable AI prompt can be pasted into an AI assistant for a more detailed blueprint. For in-app live AI responses, deploy a secure backend that accepts `POST` JSON such as `{ "prompt": "..." }` and returns JSON with a `text` or `plan` field; enter that backend URL in the app. **Do not put a private AI API key in this public HTML file.**
 
-## Suggested next development step
-Add audio-file import and signal-analysis modules for BPM and section-change estimates, then add musician-reviewed tonic/melody compatibility checks. Accurate raga identification and lyric alignment should remain verified outputs rather than guesses.
+The app does not independently verify BPM, key/tonic, raga, tala, exact lyric timestamps, current popularity, or whether two melodies can safely overlap. Do not treat approximate section timings as exact audio timestamps. Check actual recordings, singer comfort, melody/tonic, rhythm, and transitions in rehearsal; if two melodies clash, use a short instrumental/percussion bridge instead of forcing an overlap.
+
+For copyrighted songs, the app does not ship with complete lyrics. Use short cues or section labels and refer to authorised recordings/lyrics. Confirm performance/licensing requirements with the event organiser.
